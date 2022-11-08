@@ -4,11 +4,13 @@ Assuma que a string não possui nenhuma letra com acento, número ou caractere e
 letras e espaços */
 
 function superiorLetter(phrase) {
-  const x = phrase.split("").sort();
-  const k = x.splice(x.indexOf(" "), 1);
-  console.log(x);
+  const letters = phrase.split("").sort();
+  if (letters[0] === " ") {
+    const ArrayWhitoutVoid = letters.splice(letters.indexOf(" "), 1);
+    return letters[0].toLowerCase();
+  }
 
-  return x[0].toLowerCase();
+  return letters[0].toLowerCase();
 }
 
-console.log(superiorLetter("ABC"));
+console.log(superiorLetter("jajau bolinha"));
